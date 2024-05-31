@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import { DocumentProps, Head, Html, Main, NextScript } from 'next/document';
 
 import i18nextConfig from '../next-i18next.config';
@@ -25,10 +26,16 @@ export default function Document(props: Props) {
           src="//sdk.51.la/js-sdk-pro.min.js?id=K4ErbxGT8UXakPaV&ck=K4ErbxGT8UXakPaV&autoTrack=true&hashMode=true"
           async
         />
-        <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
-        <script>
-          new LingQue.Monitor().init({id:"KSUfQMDQjCXXRKTU",sendSpaPv:true});
-        </script>
+        <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossOrigin="anonymous"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          !(function(c,i,e,b){
+            var h=i.createElement("script");
+            var f=i.getElementsByTagName("script")[0];
+            h.type="text/javascript";
+            h.crossorigin=true;
+            h.onload=function(){new c[b]["Monitor"]().init({id:"KSUfQMDQjCXXRKTU",sendSpaPv:true});};
+            f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");
+        ` }}/>
       </Head>
       <body>
         <Main />
