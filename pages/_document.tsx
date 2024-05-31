@@ -25,6 +25,10 @@ export default function Document(props: Props) {
           src="//sdk.51.la/js-sdk-pro.min.js?id=K4ErbxGT8UXakPaV&ck=K4ErbxGT8UXakPaV&autoTrack=true&hashMode=true"
           async
         />
+        <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
+        <script>
+          new LingQue.Monitor().init({id:"KSUfQMDQjCXXRKTU",sendSpaPv:true});
+        </script>
       </Head>
       <body>
         <Main />
